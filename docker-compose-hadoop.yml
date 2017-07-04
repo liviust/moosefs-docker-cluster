@@ -1,0 +1,101 @@
+version: '2'
+services:
+  master:
+    image: lewuathe/hadoop-master
+    container_name: "master"
+    ports:
+      - "9870:9870"
+      - "8088:8088"
+      - "19888:19888"
+      - "8188:8188"
+    links:
+      - mfsmaster
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.3"
+  mfsmaster:
+    image: moosefs/master
+    # build: ./moosefs-master
+    container_name: "mfsmaster"
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.2"
+  mfschunkhadoop1:
+    # image: moosefs/chunkserver-client-hadoop-slave
+    build: ./moosefs-chunkserver-client-hadoop-slave
+    container_name: "mfschunkhadoop1"
+    hostname: mfschunkhadoop1
+    privileged: true
+    stdin_open: true
+    tty: true
+    environment:
+      - RUN_EXAMPLE=1
+    links:
+      - mfsmaster
+      - master
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.11"
+  mfschunkhadoop2:
+    # image: moosefs/chunkserver
+    build: ./moosefs-chunkserver-client-hadoop-slave
+    container_name: "mfschunkhadoop2"
+    hostname: mfschunkhadoop2
+    privileged: true
+    stdin_open: true
+    tty: true
+    links:
+      - mfsmaster
+      - master
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.12"
+  mfschunkhadoop3:
+    # image: moosefs/chunkserver
+    build: ./moosefs-chunkserver-client-hadoop-slave
+    container_name: "mfschunkhadoop3"
+    hostname: mfschunkhadoop3
+    privileged: true
+    stdin_open: true
+    tty: true
+    links:
+      - mfsmaster
+      - master
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.13"
+  mfschunkhadoop4:
+    # image: moosefs/chunkserver
+    build: ./moosefs-chunkserver-client-hadoop-slave
+    container_name: "mfschunkhadoop4"
+    hostname: mfschunkhadoop4
+    privileged: true
+    stdin_open: true
+    tty: true
+    links:
+      - mfsmaster
+      - master
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.14"
+  mfschunkhadoop5:
+    # image: moosefs/chunkserver
+    build: ./moosefs-chunkserver-client-hadoop-slave
+    container_name: "mfschunkhadoop5"
+    hostname: mfschunkhadoop5
+    privileged: true
+    stdin_open: true
+    tty: true
+    links:
+      - mfsmaster
+      - master
+    networks:
+      mfsnet:
+        ipv4_address: "172.20.0.15"
+networks:
+  mfsnet:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.20.0.0/16
+         gateway: 172.20.0.1
