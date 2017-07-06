@@ -1,5 +1,5 @@
 # Use hadoop base image (Ubuntu 14.04)
-FROM lewuathe/hadoop-base:latest
+FROM hadoop-base:latest
 
 # Install wget, lsb-release and curl
 RUN apt-get update && apt-get install -y wget lsb-release curl fuse libfuse2 tree

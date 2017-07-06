@@ -1,0 +1,25 @@
+# This file should be:
+# - Placed in the /etc/hadoop/conf directory
+# - On the Namenode (and backups IE: HA, Failover, etc)
+# - On the Job Tracker OR Resource Manager (and any Failover JT's/RM's)
+# This file should be placed in the /etc/hadoop/conf directory.
+
+# Add Hostnames to this file. Format <host ip> <rack_location>
+172.20.0.11 01
+172.20.0.12 01
+172.20.0.13 01
+172.20.0.21 02
+172.20.0.22 02
+172.20.0.23 02
+172.20.0.31 03
+172.20.0.32 03
+172.20.0.33 03
+mfschunkhadoop_a1 04
+mfschunkhadoop_a2 04
+mfschunkhadoop_a3 04
+mfschunkhadoop_b1 05
+mfschunkhadoop_b2 05
+mfschunkhadoop_b3 05
+mfschunkhadoop_c1 06
+mfschunkhadoop_c2 06
+mfschunkhadoop_c3 06
