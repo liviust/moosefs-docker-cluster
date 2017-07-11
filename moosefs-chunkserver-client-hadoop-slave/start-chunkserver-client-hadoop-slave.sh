@@ -26,8 +26,8 @@ echo "If you can find this file in /mnt/mfs/SUCCESS on your client instance it m
 ls /mnt/mfs/
 
 # Increase memory size
-mv /home/mapred-site.xml /usr/local/hadoop-3.0.0-alpha4-SNAPSHOT/input/mapred-site.xml
-mv /home/etc_mapred-site.xml /usr/local/hadoop-3.0.0-alpha4-SNAPSHOT/etc/hadoop/mapred-site.xml
+mv /home/mapred-site.xml /usr/local/hadoop-$HADOOP_VERSION/input/mapred-site.xml
+mv /home/etc_mapred-site.xml /usr/local/hadoop-$HADOOP_VERSION/etc/hadoop/mapred-site.xml
 
 # Hadoop
 $HADOOP_HOME/etc/hadoop/hadoop-env.sh
@@ -71,7 +71,7 @@ then
   $HADOOP_HOME/bin/hadoop fs -ls
 
   export HADOOP_TOOLS_LIB_JARS_DIR=lib
-  export HADOOP_TOOLS_HOME="/usr/local/hadoop-3.0.0-alpha4-SNAPSHOT/share/hadoop/tools"
+  export HADOOP_TOOLS_HOME="/usr/local/hadoop-$HADOOP_VERSION/share/hadoop/tools"
 
   #Wait to exit safe mode
   while [ `$HADOOP_HOME/bin/hadoop dfsadmin -safemode get | grep ON | wc -l` -eq "1" ]; do echo "SAFEMODE is ON; Waiting to exit safe mode"; sleep 10; done
@@ -79,7 +79,7 @@ then
   echo "SAFEMODE is OFF"
   echo "Starting example job"
 
-  $HADOOP_HOME/bin/hadoop jar ${HADOOP_TOOLS_HOME}/${HADOOP_TOOLS_LIB_JARS_DIR}/hadoop-streaming-3.0.0-alpha4-SNAPSHOT.jar -input data/ -output results/0000 -mapper mapper.py -file mapper.py -reducer reducer.py -file reducer.py
+  $HADOOP_HOME/bin/hadoop jar ${HADOOP_TOOLS_HOME}/${HADOOP_TOOLS_LIB_JARS_DIR}/hadoop-streaming-$HADOOP_VERSION.jar -input data/ -output results/0000 -mapper mapper.py -file mapper.py -reducer reducer.py -file reducer.py
 fi
 
 if [[ $1 == "-d" ]]; then

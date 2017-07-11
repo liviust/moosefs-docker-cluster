@@ -19,10 +19,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.2"
-  mfschunkhadoop_a1:
+  mfschunkhadoopa1:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_a1"
-    hostname: mfschunkhadoop_a1
+    container_name: "mfschunkhadoopa1"
+    hostname: mfschunkhadoopa1
     privileged: true
     stdin_open: true
     tty: true
@@ -34,10 +34,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.11"
-  mfschunkhadoop_a2:
+  mfschunkhadoopa2:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_a2"
-    hostname: mfschunkhadoop_a2
+    container_name: "mfschunkhadoopa2"
+    hostname: mfschunkhadoopa2
     privileged: true
     stdin_open: true
     tty: true
@@ -47,10 +47,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.12"
-  mfschunkhadoop_a3:
+  mfschunkhadoopa3:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_a3"
-    hostname: mfschunkhadoop_a3
+    container_name: "mfschunkhadoopa3"
+    hostname: mfschunkhadoopa3
     privileged: true
     stdin_open: true
     tty: true
@@ -60,10 +60,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.13"
-  mfschunkhadoop_b1:
+  mfschunkhadoopb1:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_b1"
-    hostname: mfschunkhadoop_b1
+    container_name: "mfschunkhadoopb1"
+    hostname: mfschunkhadoopb1
     privileged: true
     stdin_open: true
     tty: true
@@ -73,10 +73,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.21"
-  mfschunkhadoop_b2:
+  mfschunkhadoopb2:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_b2"
-    hostname: mfschunkhadoop_b2
+    container_name: "mfschunkhadoopb2"
+    hostname: mfschunkhadoopb2
     privileged: true
     stdin_open: true
     tty: true
@@ -86,10 +86,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.22"
-  mfschunkhadoop_b3:
+  mfschunkhadoopb3:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_b3"
-    hostname: mfschunkhadoop_b3
+    container_name: "mfschunkhadoopb3"
+    hostname: mfschunkhadoopb3
     privileged: true
     stdin_open: true
     tty: true
@@ -99,10 +99,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.23"
-  mfschunkhadoop_c1:
+  mfschunkhadoopc1:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_c1"
-    hostname: mfschunkhadoop_c1
+    container_name: "mfschunkhadoopc1"
+    hostname: mfschunkhadoopc1
     privileged: true
     stdin_open: true
     tty: true
@@ -112,10 +112,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.31"
-  mfschunkhadoop_c2:
+  mfschunkhadoopc2:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_c2"
-    hostname: mfschunkhadoop_c2
+    container_name: "mfschunkhadoopc2"
+    hostname: mfschunkhadoopc2
     privileged: true
     stdin_open: true
     tty: true
@@ -125,10 +125,10 @@ services:
     networks:
       mfsnet:
         ipv4_address: "172.20.0.32"
-  mfschunkhadoop_c3:
+  mfschunkhadoopc3:
     build: ./moosefs-chunkserver-client-hadoop-slave
-    container_name: "mfschunkhadoop_c3"
-    hostname: mfschunkhadoop_c3
+    container_name: "mfschunkhadoopc3"
+    hostname: mfschunkhadoopc3
     privileged: true
     stdin_open: true
     tty: true

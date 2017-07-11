@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 def getRackInfo(fname):
-    cmd = "docker-compose -f docker-compose-hadoop.yml exec mfschunkhadoop_a2 hadoop/bin/hdfs fsck %s -files -blocks -locations -racks" % fname
+    cmd = "docker-compose -f docker-compose-hadoop.yml exec mfschunkhadoopa2 hadoop/bin/hdfs fsck %s -files -blocks -locations -racks" % fname
 
     cmd = cmd.split(' ')
 
